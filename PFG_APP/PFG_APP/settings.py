@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'PFG_APP.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'QUESTIONNAIRE',
+        'NAME': os.environ['MYSQL_NAME'],
         'USER': os.environ['MYSQL_USER'],
         'PASSWORD': os.environ['MYSQL_PASSWORD'],
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'HOST': os.environ['MYSQL_HOST'],
+        'PORT': os.environ['MYSQL_PORT'],
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
         }
